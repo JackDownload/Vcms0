@@ -83,6 +83,7 @@ collections:
     format: 'json'
     fields:
       - {label: Title, name: title, widget: string}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: Position, name: position, widget: string}
       - {label: Description, name: description, widget: string, required: false}
  
