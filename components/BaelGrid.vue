@@ -12,11 +12,7 @@
           <nuxt-link
             class="xs-text-center xs-flex xs-full-height xs-flex-align-center xs-flex-justify-center xs-text-center"
             :to="p.path"
-          >            <img
-              :alt="post.title"
-              class="w-full"
-              :src="post.thumbnail || 'https://source.unsplash.com/random/640x340'"
-            />{{p.title}}</nuxt-link>
+          >{{p.title}}</nuxt-link>
         </div>
       </div>
     </div>
@@ -32,12 +28,6 @@
 export default {
   props: {
     posts: {
-      type: Array,
-    },
-    items: {
-      type: Array,
-    },
-    allitems: {
       type: Array,
     },
   },
@@ -60,19 +50,5 @@ export default {
 .bael-grid .intersected.bcg-item {
   opacity: 1;
   transition: 0.2s opacity ease-out;
-}
-
-.full-bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  object-fit: cover;
-  object-position: 50% 50%;
-  width: 100%;
-  height: 100%;
-  transition: 0.4s all;
-  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 </style>
