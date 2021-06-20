@@ -8,12 +8,15 @@
         class="xs-border xs-border-top-none xs-border-left-none xs-p2 bcg-item"
         :style="`transition-delay:0.${i * .5}s`"
       >
-       {{p.thumbnail}} {{p.category}
         <div class="item xs-block xs-full-height xs-flex">
           <nuxt-link
             class="xs-text-center xs-flex xs-full-height xs-flex-align-center xs-flex-justify-center xs-text-center"
             :to="p.path"
-          >{{p.title}}</nuxt-link>
+          >            <img
+              :alt="post.title"
+              class="w-full"
+              :src="post.thumbnail || 'https://source.unsplash.com/random/640x340'"
+            />{{p.title}}</nuxt-link>
         </div>
       </div>
     </div>
