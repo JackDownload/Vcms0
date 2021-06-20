@@ -9,26 +9,11 @@
         :style="`transition-delay:0.${i * .5}s`"
       >
         <div class="item xs-block xs-full-height xs-flex">
+           <img :key="p.thumbnail" class="full-bg-image" />
           <nuxt-link
             class="xs-text-center xs-flex xs-full-height xs-flex-align-center xs-flex-justify-center xs-text-center"
             :to="p.path"
-          >
-          {{p.date}} vala mi {{p.title}}</nuxt-link>
-        </div>
-                <div
-          v-if="p.thumbnail"
-          class="item xs-block xs-full-height xs-flex xs-relative xs-flex-align-start xs-flex-justify-end xs-text-left"
-        >
-          <div
-            class="xs-text-left xs-flex xs-full-height xs-flex-justify-end xs-flex-align-end xs-width-auto"
-          >
-            <nuxt-link class="full-bg-link" :to="p._path">{{p.title}}</nuxt-link>
-          </div>
-          <nuxt-link :to="p._path">
-            <img v-lazy="p.thumbnail" :key="p.thumbnail" class="full-bg-image" />
-
-            <div v-if="!p.thumbnail" class="full-bg-color"></div>
-          </nuxt-link>
+          >{{p.title}}</nuxt-link>
         </div>
       </div>
     </div>
@@ -66,5 +51,19 @@ export default {
 .bael-grid .intersected.bcg-item {
   opacity: 1;
   transition: 0.2s opacity ease-out;
+}
+
+.full-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s all;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 </style>
