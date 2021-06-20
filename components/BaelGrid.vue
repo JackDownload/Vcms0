@@ -9,11 +9,21 @@
         :style="`transition-delay:0.${i * .5}s`"
       >
         <div class="item xs-block xs-full-height xs-flex">
-                    <lazy-featured-image
-            v-if="post.thumbnail"
-            :title="post.title"
-            :thumbnail="post.thumbnail"
-          />
+                  <div
+          v-if="p.thumbnail"
+          class="item xs-block xs-full-height xs-flex xs-relative xs-flex-align-start xs-flex-justify-end xs-text-left"
+        >
+          <div
+            class="xs-text-left xs-flex xs-full-height xs-flex-justify-end xs-flex-align-end xs-width-auto"
+          >
+            <nuxt-link class="full-bg-link" :to="p._path">{{p.title}}</nuxt-link>
+          </div>
+          <nuxt-link :to="p._path">
+            <img v-lazy="p.thumbnail" :key="p.thumbnail" class="full-bg-image" />
+
+            <div v-if="!p.thumbnail" class="full-bg-color"></div>
+          </nuxt-link>
+        </div>
           <nuxt-link
             class="xs-text-center xs-flex xs-full-height xs-flex-align-center xs-flex-justify-center xs-text-center"
             :to="p.path"
