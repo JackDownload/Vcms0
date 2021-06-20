@@ -12,7 +12,7 @@
           <nuxt-link
             class="xs-text-center xs-flex xs-full-height xs-flex-align-center xs-flex-justify-center xs-text-center"
             :to="p.path"
-          >{{p.title}}<img :key="p.thumbnail" class="full-bg-image" /></nuxt-link>
+          >{{p.title}}<img :key="p.thumbnail" class="image" /></nuxt-link>
         </div>
       </div>
     </div>
@@ -28,6 +28,12 @@
 export default {
   props: {
     posts: {
+      type: Array,
+    },
+    items: {
+      type: Array,
+    },
+    allitems: {
       type: Array,
     },
   },
