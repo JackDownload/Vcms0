@@ -12,7 +12,7 @@
           <nuxt-link
             class="xs-text-center xs-flex xs-full-height xs-flex-align-center xs-flex-justify-center xs-text-center"
             :to="p.path"
-          >{{p.title}}<img :key="p.thumbnail" class="image" /></nuxt-link>
+          > {{p.thumbnail}} {{p.category}} és {{p.title}}<img :key="p.thumbnail" class="image" /></nuxt-link>
         </div>
       </div>
     </div>
