@@ -12,10 +12,7 @@
           <nuxt-link
             class="xs-text-center xs-flex xs-full-height xs-flex-align-center xs-flex-justify-center xs-text-center"
             :to="p.path"
-          >
-             <img v-lazy="p.thumbnail" :key="p.thumbnail" class="full-bg-image" />
-
-            <div v-if="!p.thumbnail" class="full-bg-color"></div>{{p.title}}</nuxt-link>
+          >ez a neve{{p.title}}</nuxt-link>
         </div>
       </div>
     </div>
